@@ -983,6 +983,11 @@ def results():
         else:
             session['spanish_nonspanish'] = '0'
 
+        if form.spanish.data == 'other':
+            session['spanish_other'] = '1'
+        else:
+            session['spanish_other'] = '0'
+
 
         if form.spanish.data == 'puerto':
             session['spanish_puerto'] = '1'
@@ -1118,6 +1123,7 @@ def results():
                                   session['spanish_dominican'],
                                   session['spanish_mexican'],
                                   session['spanish_nonspanish'],
+                                  session['spanish_other'],
                                   session['spanish_puerto'],
                                   session['spanish_south'],
                                   session['spanish_surname'],
