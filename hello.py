@@ -936,6 +936,11 @@ def results():
         else:
             session['seerhistoric_localized'] = '0'
 
+        if form.seerhistoric.data == 'regional':
+            session['seerhistoric_regional'] = '1'
+        else:
+            session['seerhistoric_regional'] = '0'
+
 
         if form.seerhistoric.data == 'unstaged':
             session['seerhistoric_unstaged'] = '1'
@@ -955,6 +960,11 @@ def results():
         else:
             session['spanish_cuban'] = '0'
 
+        if form.spanish.data == 'dominican':
+            session['spanish_dominican'] = '1'
+        else:
+            session['spanish_dominican'] = '0'
+
 
         if form.spanish.data == 'mexican':
             session['spanish_mexican'] = '1'
@@ -968,10 +978,15 @@ def results():
             session['spanish_nonspanish'] = '0'
 
 
-        if form.spanish.data == 'other':
-            session['spanish_other'] = '1'
+        if form.spanish.data == 'puerto':
+            session['spanish_puerto'] = '1'
         else:
-            session['spanish_other'] = '0'
+            session['spanish_puerto'] = '0'
+
+        if form.spanish.data == 'south':
+            session['spanish_south'] = '1'
+        else:
+            session['spanish_south'] = '0'
 
 
 
@@ -984,6 +999,11 @@ def results():
             session['spanish_nos'] = '1'
         else:
             session['spanish_nos'] = '0'
+
+        if form.spanish.data == 'unknown':
+            session['spanish_unknown'] = '1'
+        else:
+            session['spanish_unknown'] = '0'
         
 
                  
