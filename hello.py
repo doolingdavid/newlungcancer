@@ -760,10 +760,20 @@ def results():
         else:
             session['raceethnicity_asianindian'] = '0'
 
+        if form.raceethnicity.data == 'asianindianpakistani':
+            session['raceethnicity_asianindianpakistani'] = '1'
+        else:
+            session['raceethnicity_asianindianpakistani'] = '0'
+
         if form.raceethnicity.data == 'black':
             session['raceethnicity_black'] = '1'
         else:
             session['raceethnicity_black'] = '0'
+
+        if form.raceethnicity.data == 'chamorran':
+            session['raceethnicity_chamorran'] = '1'
+        else:
+            session['raceethnicity_chamorran'] = '0'
 
 
         if form.raceethnicity.data == 'chinese':
@@ -771,17 +781,70 @@ def results():
         else:
             session['raceethnicity_chinese'] = '0'
 
+        if form.raceethnicity.data == 'fijiislander':
+            session['raceethnicity_fijiislander'] = '1'
+        else:
+            session['raceethnicity_fijiislander'] = '0'
+
+        if form.raceethnicity.data == 'filipino':
+            session['raceethnicity_filipino'] = '1'
+        else:
+            session['raceethnicity_filipino'] = '0'
+
+        if form.raceethnicity.data == 'guamanian':
+            session['raceethnicity_guamanian'] = '1'
+        else:
+            session['raceethnicity_guamanian'] = '0'
+
+        if form.raceethnicity.data == 'hawaiian':
+            session['raceethnicity_hawaiian'] = '1'
+        else:
+            session['raceethnicity_hawaiian'] = '0'
+
+        if form.raceethnicity.data == 'hmong':
+            session['raceethnicity_hmong'] = '1'
+        else:
+            session['raceethnicity_hmong'] = '0'
+
+        
+
 
         if form.raceethnicity.data == 'japanese':
             session['raceethnicity_japanese'] = '1'
         else:
             session['raceethnicity_japanese'] = '0'
 
+        if form.raceethnicity.data == 'kampuchean':
+            session['raceethnicity_kampuchean'] = '1'
+        else:
+            session['raceethnicity_kampuchean'] = '0'
+
+        if form.raceethnicity.data == 'korean':
+            session['raceethnicity_korean'] = '1'
+        else:
+            session['raceethnicity_korean'] = '0'
+
+
+        if form.raceethnicity.data == 'laotian':
+            session['raceethnicity_laotian'] = '1'
+        else:
+            session['raceethnicity_laotian'] = '0'
+
 
         if form.raceethnicity.data == 'melanesian':
             session['raceethnicity_melanesian'] = '1'
         else:
             session['raceethnicity_melanesian'] = '0'
+
+        if form.raceethnicity.data == 'micronesian':
+            session['raceethnicity_micronesian'] = '1'
+        else:
+            session['raceethnicity_micronesian'] = '0'
+
+        if form.raceethnicity.data == 'newguinean':
+            session['raceethnicity_newguinean'] = '1'
+        else:
+            session['raceethnicity_newguinean'] = '0'
 
 
         if form.raceethnicity.data == 'other':
@@ -801,11 +864,26 @@ def results():
         else:
             session['raceethnicity_pacific'] = '0'
 
+        if form.raceethnicity.data == 'pakistani':
+            session['raceethnicity_pakistani'] = '1'
+        else:
+            session['raceethnicity_pakistani'] = '0'
+
+        if form.raceethnicity.data == 'samoan':
+            session['raceethnicity_samoan'] = '1'
+        else:
+            session['raceethnicity_samoan'] = '0'
+
 
         if form.raceethnicity.data == 'thai':
             session['raceethnicity_thai'] = '1'
         else:
             session['raceethnicity_thai'] = '0'
+
+        if form.raceethnicity.data == 'tongan':
+            session['raceethnicity_tongan'] = '1'
+        else:
+            session['raceethnicity_tongan'] = '0'
 
 
         if form.raceethnicity.data == 'unknown':
