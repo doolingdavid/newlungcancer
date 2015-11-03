@@ -49,6 +49,11 @@ yodlistchoices = zip(yodlistlabel, yodlistlabel)
 monthlistlabel = [str(a) for a in range(1,13)]
 monthlistchoices = zip(monthlistlabel, monthlistlabel)
 
+numprimarieslistlabel = [str(a) for a in range(1,10)]
+numprimarieslistchoices = zip(numprimarieslistlabel, numprimarieslistlabel)
+
+
+
 
 
 
@@ -106,8 +111,11 @@ class NameForm(Form):
 
 
     laterality = SelectField('Laterality', default='0',
-        choices = [('paired','Paired site, but no information concerning laterality; midline tumor'),
-                   ('bilateral','bilateral involvement, lateral origin unknown; stated to be single primary'),
+        choices = [('bilateral','bilateral involvement, lateral origin unknown; stated to be single primary'),
+                   ('left','left: origin of primary'),
+                   ('not','not a paired site'),
+                   ('only','only one side involved, right or left origin unspecified'),
+                   ('paired','paired site, but no information concerning laterality; midline tumor'),
                    ('right','right: origin of primary'),
                    ('not','None of the above')],
                     validators=[Required()])
@@ -142,17 +150,35 @@ class NameForm(Form):
             validators=[Required()])
 
 
+    numberofprimaries = FloatField('How many primaries?', validators=[Required()])
+
+
     raceethnicity = SelectField('Race_ethnicity', default='0',
         choices = [('americanindian','American Indian, Aleutian, Alaskan Native or Eskimo'),
                    ('asianindian','Asian Indian'),
+                   ('asianindianpakistani','Asian Indian or Pakistani'),
                    ('black','Black'),
+                   ('chamorran','Chamorran'),
                    ('chinese','Chinese'),
+                   ('fijiislander','Fiji Islander'),
+                   ('filipino','Filipino'),
+                   ('guamanian','Guamanian'),
+                   ('hawaiian','Hawaiian'),
+                   ('hmong','Hmong'),
                    ('japanese','Japanese'),
+                   ('kampuchean','Kampuchean'),
+                   ('korean','Korean'),
+                   ('laotian','Laotian'),
                    ('melanesian','Melanesian'),
+                   ('micronesian','Micronesian'),
+                   ('newguinean','New Guinean'),
                    ('other','Other'),
                    ('otherasian','Other Asian'),
                    ('pacific','Pacific Islander'),
+                   ('pakistani','Pakistani'),
+                   ('samoan','Samoan'),
                    ('thai','Thai'),
+                   ('tongan','Tongan'),
                    ('unknown','Unknown'),
                    ('vietnamese','Vietnamese'),
                    ('white','White')],
@@ -169,6 +195,7 @@ class NameForm(Form):
         choices = [('distant','Distant'),
                    ('in','In situ'),
                    ('localized','Localized'),
+                   ('regional','Regional'),
                    ('unstaged','Unstaged')],
             validators=[Required()])
 
@@ -182,11 +209,15 @@ class NameForm(Form):
 
     spanish = SelectField('spanish_hispanic_origin', default='0',
         choices = [('cuban','Cuban'),
+                   ('dominican','Dominican Republic'),
                    ('mexican','Mexican'),
                    ('nonspanish','Non-Spanish/Non-hispanic'),
                    ('other','Other specified Spanish/Hispanic origin (excludes Dominican Republic)'),
+                   ('puerto','Puerto Rican'),
+                   ('south','South or Central American (except Brazil)')
                    ('surname','Spanish surname only'),
-                   ('nos','Spanish, NOS; Hispanic, NOS; Latino NOS')],
+                   ('nos','Spanish, NOS; Hispanic, NOS; Latino NOS'),
+                   ('unknown','Unknown whether Spanish/Hispanic or not')],
             validators=[Required()])
 
     
