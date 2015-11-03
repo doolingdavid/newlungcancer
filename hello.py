@@ -26,7 +26,7 @@ import time
 import datetime
 import tornado.wsgi
 import tornado.httpserver
-import tornado.ioloop
+import tornado.ioloop               
 import tornado.options
 import tornado.autoreload
 from flask import jsonify
@@ -390,6 +390,10 @@ def results():
         session['lat'] = lat
         session['lng'] = lng
         session['elevation'] = elevation_feet
+
+        session['number_of_primaries'] = form.numberofprimaries.data
+
+        
                             
                         
 
@@ -422,29 +426,33 @@ def results():
         else:
             session['grade_we'] = '0'
 
-        
+        if form.hist.data == 'acinar':
+            session['hist_acinar'] = '1'
+        else:
+            session['hist_acinar'] = '0'
+
+            
         if form.hist.data == 'adenomas':
             session['hist_adenomas'] = '1'
         else:
             session['hist_adenomas'] = '0'
 
-        if form.hist.data == 'adnexal':
-            session['hist_adnexal'] = '1'
+        if form.hist.data == 'blood':
+            session['hist_blood'] = '1'
         else:
-            session['hist_adnexal'] = '0'
+            session['hist_blood'] = '0'
+
+        if form.hist.data == 'complex_epithelial':
+            session['hist_complex_epithelial'] = '1'
+        else:
+            session['hist_complex_epithelial'] = '0'
 
 
-        if form.hist.data == 'basal':
-            session['hist_basal'] = '1'
+        if form.hist.data == 'complex_mixed':
+            session['hist_complex_mixed'] = '1'
         else:
-            session['hist_basal'] = '0'
+            session['hist_complex_mixed'] = '0'
             
-            
-        if form.hist.data == 'complex':
-            session['hist_complex'] = '1'
-        else:
-            session['hist_complex'] = '0'
-
 
         if form.hist.data == 'cystic':
             session['hist_cystic'] = '1'
@@ -462,11 +470,120 @@ def results():
         else:
             session['hist_epithelial'] = '0'
 
+        if form.hist.data == 'fibroepithelial':
+            session['hist_fibroepithelial'] = '1'
+        else:
+            session['hist_fibroepithelial'] = '0'
 
+        if form.hist.data == 'fibromatuos':
+            session['hist_fibromatuos'] = '1'
+        else:
+            session['hist_fibromatuos'] = '0'
+
+        if form.hist.data == 'germ':
+            session['hist_germ'] = '1'
+        else:
+            session['hist_germ'] = '0'
+
+
+        if form.hist.data == 'gliomas':
+            session['hist_gliomas'] = '1'
+        else:
+            session['hist_gliomas'] = '0'
+
+        if form.hist.data == 'granular':
+            session['hist_granular'] = '1'
+        else:
+            session['hist_granular'] = '0'
+
+        if form.hist.data == 'lipomatous':
+            session['hist_lipomatous'] = '1'
+        else:
+            session['hist_lipomatous'] = '0'
+
+        if form.hist.data == 'misc_bone':
+            session['hist_misc_bone'] = '1'
+        else:
+            session['hist_misc_bone'] = '0'
+
+        if form.hist.data == 'misc_tumors':
+            session['hist_misc_tumors'] = '1'
+        else:
+            session['hist_misc_tumors'] = '0'
+
+        if form.hist.data == 'mucoepidermoid':
+            session['hist_mucoepidermoid'] = '1'
+        else:
+            session['hist_mucoepidermoid'] = '0'
+
+        if form.hist.data == 'myomatous':
+            session['hist_myomatous'] = '1'
+        else:
+            session['hist_myomatous'] = '0'
+
+
+        if form.hist.data == 'myxomatous':
+            session['hist_myxomatous'] = '1'
+        else:
+            session['hist_myxomatous'] = '0'
+            
         if form.hist.data == 'nerve':
             session['hist_nerve'] = '1'
         else:
             session['hist_nerve'] = '0'
+
+        if form.hist.data == 'neuroepitheliomatous':
+            session['hist_neuroepitheliomatous'] = '1'
+        else:
+            session['hist_neuroepitheliomatous'] = '0'
+
+        if form.hist.data == 'nevi':
+            session['hist_nevi'] = '1'
+        else:
+            session['hist_nevi'] = '0'
+
+
+        if form.hist.data == 'osseous':
+            session['hist_osseous'] = '1'
+        else:
+            session['hist_osseous'] = '0'
+
+        if form.hist.data == 'paragangliomas':
+            session['hist_paragangliomas'] = '1'
+        else:
+            session['hist_paragangliomas'] = '0'
+
+
+        if form.hist.data == 'soft':
+            session['hist_soft'] = '1'
+        else:
+            session['hist_soft'] = '0'
+
+
+        if form.hist.data == 'squamous':
+            session['hist_squamous'] = '1'
+        else:
+            session['hist_squamous'] = '0'
+
+        if form.hist.data == 'synovial':
+            session['hist_synovial'] = '1'
+        else:
+            session['hist_synovial'] = '0'
+
+        if form.hist.data == 'thymic':
+            session['hist_thymic'] = '1'
+        else:
+            session['hist_thymic'] = '0'
+
+        if form.hist.data == 'transitional':
+            session['hist_transitional'] = '1'
+        else:
+            session['hist_transitional'] = '0'
+
+        if form.hist.data == 'trophoblastic':
+            session['hist_trophoblastic'] = '1'
+        else:
+            session['hist_trophoblastic'] = '0'
 
 
         if form.hist.data == 'unspecified':
@@ -474,12 +591,33 @@ def results():
         else:
             session['hist_unspecified'] = '0'
 
+        if form.hist.data == 'not':
+            session['hist_not'] = '1'
+        else:
+            session['hist_not'] = '0'
+
 
 
         if form.laterality.data == 'bilateral':
             session['laterality_bilateral'] = '1'
         else:
             session['laterality_bilateral'] = '0'
+
+
+        if form.laterality.data == 'left':
+            session['laterality_left'] = '1'
+        else:
+            session['laterality_left'] = '0'
+
+        if form.laterality.data == 'not':
+            session['laterality_not'] = '1'
+        else:
+            session['laterality_not'] = '0'
+
+        if form.laterality.data == 'only':
+            session['laterality_only'] = '1'
+        else:
+            session['laterality_only'] = '0'
 
         if form.laterality.data == 'paired':
             session['laterality_paired'] = '1'
@@ -542,10 +680,7 @@ def results():
             session['monthofdiagnosis_jan'] = '0'
 
 
-        if form.monthofdiagnosis.data == 'feb':
-            session['monthofdiagnosis_feb'] = '1'
-        else:
-            session['monthofdiagnosis_feb'] = '0'
+        
 
 
         if form.monthofdiagnosis.data == 'feb':
