@@ -60,7 +60,8 @@ class NameForm(Form):
     address = StringField("What is the patient's address?", validators=[Required()])
     
     grade = SelectField('Grade',default='0',
-                    choices = [('mo','moderately differentiated'),
+                    choices = [('ce','cell type not determined'),
+                        ('mo','moderately differentiated'),
                                ('po','poorly differentiated'),
                                ('un','undifferentiated; anaplastic'),
                                ('we','well differentiated'),
@@ -341,6 +342,12 @@ def results():
 
         session['grade'] = form.grade.data
 
+        if form.grade.data == 'ce':
+            session['grade_ce'] = '1'
+        else:
+            session['grade_ce'] = '0'
+
+        
         if form.grade.data == 'mo':
             session['grade_mo'] = '1'
         else:
