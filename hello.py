@@ -176,6 +176,7 @@ class NameForm(Form):
                    ('otherasian','Other Asian'),
                    ('pacific','Pacific Islander'),
                    ('pakistani','Pakistani'),
+                   ('polynesian','Polynesian'),
                    ('samoan','Samoan'),
                    ('thai','Thai'),
                    ('tongan','Tongan'),
@@ -869,6 +870,11 @@ def results():
         else:
             session['raceethnicity_pakistani'] = '0'
 
+        if form.raceethnicity.data == 'polynesian':
+            session['raceethnicity_polynesian'] = '1'
+        else:
+            session['raceethnicity_polynesian'] = '0'
+
         if form.raceethnicity.data == 'samoan':
             session['raceethnicity_samoan'] = '1'
         else:
@@ -1047,6 +1053,9 @@ def results():
                                   session['hist_unspecified'],
                                   session['lat'],
                                   session['laterality_bilateral'],
+                                  session['laterality_left'],
+                                  session['laterality_not'],
+                                  session['laterality_only'],
                                   session['laterality_paired'],
                                   session['laterality_right'],
                                   session['lng'],
@@ -1069,30 +1078,51 @@ def results():
                                   session['monthofdiagnosis_nov'],
                                   session['monthofdiagnosis_oct'],
                                   session['monthofdiagnosis_sep'],
+                                  session['number_of_primaries'],
                                   session['raceethnicity_americanindian'],
                                   session['raceethnicity_asianindian'],
+                                  session['raceethnicity_asianindianpakistani'],
                                   session['raceethnicity_black'],
+                                  session['raceethnicity_chamorran'],
                                   session['raceethnicity_chinese'],
+                                  session['raceethnicity_fijiislander'],
+                                  session['raceethnicity_filipino'],
+                                  session['raceethnicity_guamanian'],
+                                  session['raceethnicity_hawaiian'],
+                                  session['raceethnicity_hmong'],
                                   session['raceethnicity_japanese'],
+                                  session['raceethnicity_kampuchean'],
+                                  session['raceethnicity_korean'],
+                                  session['raceethnicity_laotian'],
                                   session['raceethnicity_melanesian'],
+                                  session['raceethnicity_micronesian'],
+                                  session['raceethnicity_newguinean'],
                                   session['raceethnicity_other'],
                                   session['raceethnicity_otherasian'],
                                   session['raceethnicity_pacific'],
+                                  session['raceethnicity_pakistani'],
+                                  session['raceethnicity_polynesian'],
+                                  session['raceethnicity_samoan'],
                                   session['raceethnicity_thai'],
+                                  session['raceethnicity_tongan'],
                                   session['raceethnicity_unknown'],
                                   session['raceethnicity_vietnamese'],
                                   session['raceethnicity_white'],
                                   session['seerhistoric_distant'],
                                   session['seerhistoric_in'],
                                   session['seerhistoric_localized'],
+                                  session['seerhistoric_regional'],
                                   session['seerhistoric_unstaged'],
                                   session['sex_female'],
                                   session['spanish_cuban'],
+                                  session['spanish_dominican'],
                                   session['spanish_mexican'],
                                   session['spanish_nonspanish'],
-                                  session['spanish_other'],
-                                  session['spanish_surname'],
+                                  session['spanish_puerto'],
+                                  session['spanish_south'],
+                                  session['spanish_surname']
                                   session['spanish_nos'],
+                                  session['spanish_unknown'],
                                   session['yob'],
                                   session['yod']]).astype('float')
 
