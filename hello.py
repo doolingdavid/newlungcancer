@@ -1120,7 +1120,7 @@ def results():
                                   session['spanish_nonspanish'],
                                   session['spanish_puerto'],
                                   session['spanish_south'],
-                                  session['spanish_surname']
+                                  session['spanish_surname'],
                                   session['spanish_nos'],
                                   session['spanish_unknown'],
                                   session['yob'],
