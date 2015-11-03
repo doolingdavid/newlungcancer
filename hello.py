@@ -215,7 +215,7 @@ class NameForm(Form):
                    ('nonspanish','Non-Spanish/Non-hispanic'),
                    ('other','Other specified Spanish/Hispanic origin (excludes Dominican Republic)'),
                    ('puerto','Puerto Rican'),
-                   ('south','South or Central American (except Brazil)')
+                   ('south','South or Central American (except Brazil)'),
                    ('surname','Spanish surname only'),
                    ('nos','Spanish, NOS; Hispanic, NOS; Latino NOS'),
                    ('unknown','Unknown whether Spanish/Hispanic or not')],
